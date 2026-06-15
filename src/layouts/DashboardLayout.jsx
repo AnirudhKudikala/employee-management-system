@@ -1,18 +1,21 @@
 import { Outlet } from "react-router-dom";
 
+import Navbar from "../components/Navbar/Navbar";
+import Sidebar from "../components/Sidebar/Sidebar";
+
 function DashboardLayout() {
   return (
-    <>
-      <h2>Navbar</h2>
+    <div className="h-screen flex flex-col">
+      <Navbar />
 
-      <div style={{ display: "flex", gap: "20px" }}>
-        <div>Sidebar</div>
+      <div className="flex flex-1">
+        <Sidebar />
 
-        <div>
+        <main className="flex-1 p-6">
           <Outlet />
-        </div>
+        </main>
       </div>
-    </>
+    </div>
   );
 }
 

@@ -7,12 +7,14 @@ import NotFound from "../pages/NotFound/NotFound";
 
 import DashboardLayout from "../layouts/DashboardLayout";
 
+import ProtectedRoute from "../components/ProtectedRoute/ProtectedRoute";
+
 function AppRoutes() {
   return (
     <Routes>
       <Route path="/login" element={<Login />} />
 
-      <Route element={<DashboardLayout />}>
+      <Route element={<ProtectedRoute><DashboardLayout /></ProtectedRoute>}>
         <Route path="/" element={<Dashboard />} />
         <Route path="/profile" element={<Profile />} />
       </Route>

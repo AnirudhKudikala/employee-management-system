@@ -14,6 +14,8 @@ function Login() {
       password,
     });
 
+    localStorage.setItem("isAuthenticated", true);
+
     navigate("/");
   };
 
